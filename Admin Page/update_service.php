@@ -2,7 +2,7 @@
 include '../Function/function.php';
 
 // Take Data from url//
-$roomid = $_GET["customer_id"];
+$customerid = $_GET["customer_id"];
 
 //query data room based on "customer id"
 $qdr = query("SELECT * FROM booking WHERE customer_id = $customerid")[0];
