@@ -7,12 +7,12 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="../style/home_user.css">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">
 
-    <title>Landing Page</title>
+    <title>Home User</title>
   </head>
   <body>
 
@@ -27,10 +27,11 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
             <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Pricing</a>
-            <a class="nav-item nav-link" href="#">Features</a>
+            <a class="nav-item nav-link" href="user_form.php">Complete Your Profile</a>
+            <a class="nav-item nav-link" href="#">Product</a>
+            <a class="nav-item nav-link" href="book_form.php">Booking</a>
             <a class="nav-item nav-link" href="#">About</a>
-            <a class="nav-item nav-link btn btn-primary text-white tombol" href="../User Page/login_user.php">Join Us</a>
+            <a class="nav-item nav-link btn btn-primary text-white tombol" href="login_user.php">Profile</a>
           </div>
         </div>
       </div>

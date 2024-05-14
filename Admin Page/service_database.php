@@ -2,7 +2,7 @@
 include '../Function/function.php';
 
 //query data from the "room" table
-$result = mysqli_query($conn, "SELECT * FROM tenant");
+$result = mysqli_query($conn, "SELECT * FROM booking");
 
 ?>
 
@@ -13,7 +13,7 @@ $result = mysqli_query($conn, "SELECT * FROM tenant");
 
     <title>Room Database</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style/room_database.css">
+    <link rel="stylesheet" href="../style/service_database.css">
 </head>
 <body>
     <ul>
@@ -37,9 +37,11 @@ $result = mysqli_query($conn, "SELECT * FROM tenant");
             <th>Customer ID</th>
             <th>Customer Name</th>
             <th>Service Type</th>
-            <th>Customers Address</th>
+            <th>Customer Address</th>
             <th>Payment Method</th>
+            <th>Status Service</th>
             <th>Date Service</th>
+            <th>Action</th>
         </tr>
         <?php $i= 1; ?>
         <?php  foreach( $result as $row) : ?>
@@ -49,25 +51,31 @@ $result = mysqli_query($conn, "SELECT * FROM tenant");
             <?= $i; ?>
             </td>
             <td>
-            <?= $row["room_id"]; ?>
+            <?= $row["customer_id"]; ?>
             </td>
             <td>
-            <?= $row["room_gender"]; ?>
+            <?= $row["customer_name"]; ?>
             </td>
             <td>
-            <?= $row["room_label"]; ?>
+            <?= $row["detector_id"]; ?>
             </td>
             <td>
-            <?= $row["room_location"]; ?>
+            <?= $row["customer_address"]; ?>
             </td>
             <td>
-            <?= $row["room_monthly_cost"]; ?>
+            <?= $row["payment_method"]; ?>
+            </td>
+            <td>
+            <?= $row["status_service"]; ?>
+            </td>
+            <td>
+            <?= $row["book_start_date"]; ?>
             </td>
             <td>
                 
-                <button><a href="updateroom.php?room_id=<?= $row["room_id"]; ?>"> Update  </a></button>
+                <button><a href="updateroom.php?customer_id=<?= $row["customer_id"]; ?>"> Update  </a></button>
                 <br>
-                <button><a href="deleteroom.php?room_id=<?= $row["room_id"]; ?>"> Delete </a></button>
+                <button><a href="deleteroom.php?customer_id=<?= $row["customer_id"]; ?>"> Delete </a></button>
                
                 
             </td>

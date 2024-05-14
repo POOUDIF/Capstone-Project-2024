@@ -9,12 +9,13 @@ $customertype = $_POST["service_type"];
 $customeraddress = $_POST["customer_address"];
 $paymentmethod = $_POST["payment_method"];
 $dataservice = $_POST["data_service"];
+$status = $_POST["ststus_service"];
  
 
 // query insert data
 $query = "INSERT INTO customer
             VALUES
-            ('$customerid','$customername','$servicetype','$customeraddress','$paymentmethod','$dateservice')
+            ('$customerid','$customername','$servicetype','$customeraddress','$paymentmethod','$dateservice','$status')
             ";
             mysqli_query($conn,$query); 
 }
@@ -61,6 +62,10 @@ $query = "INSERT INTO customer
             <!--Q5-->
             <label for="payment_method" class="form-label">Payment Method</label>
             <input type="text" name="payment_method" class="form-control" id="payment_method" aria-describedby="emailHelp">
+            <br>
+            <!--Q5-->
+            <label for="status_service" class="form-label">Status Service</label>
+            <input type="text" name="status_service" class="form-control" id="status_service" aria-describedby="emailHelp">
             <br>
             <!--Q6-->
             <label for="data_service" class="form-label">Date Service</label>

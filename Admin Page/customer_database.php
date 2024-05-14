@@ -41,30 +41,30 @@
             <?= $i; ?>
             </td>
             <td>
-            <?= $row["Customer_id"]; ?>
+            <?= $row["customer_id"]; ?>
             </td>
             <td>
-            <?= $row["Customer_name"]; ?>
+            <?= $row["customer_name"]; ?>
             </td>
             <td>
-            <?= $row["Customer_address"]; ?>
+            <?= $row["customer_address"]; ?>
             </td>
             <td>
-            <?= $row["Customer_ktp_no"]; ?>
+            <?= $row["customer_ktp_no"]; ?>
             </td>
             <td>
-            <?= $row["Customer_phone"]; ?>
+            <?= $row["customer_phone"]; ?>
             </td>
             <td>
-            <?= $row["Customer_email"]; ?>
+            <?= $row["customer_email"]; ?>
             </td>
             
 
                 <button>
-                <a href="updateCustomer.php?Customer_id=<?= $row["Customer_id"]; ?>"> Update </a></button>
+                <a href="updateCustomer.php?customer_id=<?= $row["customer_id"]; ?>"> Update </a></button>
                 <br>
                 <button>
-                <a href="deleteCustomer.php?Customer_id=<?= $row["Customer_id"]; ?>"> Delete </a>
+                <a href="deleteCustomer.php?customer_id=<?= $row["customer_id"]; ?>"> Delete </a>
                 </button>
             </td>
         </tr>

@@ -1,5 +1,5 @@
 <?php
-include '../Functions/functions.php';
+include '../Function/function.php';
 //Make sure the Submit Button
 if( isset($_POST["submit"]) ){
 //Take Data from each element
@@ -8,12 +8,15 @@ $customerid= htmlspecialchars($_POST["customer_id"]);
 $detectorid = htmlspecialchars($_POST["detector_id"]);
 $bsd= htmlspecialchars($_POST["book_start_date"]);
 $btrd = htmlspecialchars($_POST["book_tr_date"]);
+$cusname = htmlspecialchars($_POST["customer_name"]);
+$cusadd = htmlspecialchars($_POST["customer_address"]);
+$pm = htmlspecialchars($_POST["payment_method"]);
 
-$q= mysqli_query($conn,"SELECT * FROM customer WHERE customer_id = '$customerid' ");
+$q= mysqli_query($conn,"SELECT * FROM booking WHERE customer_id = '$customerid' ");
 $cek = mysqli_num_rows($q);
 
 if($cek==0){
-    mysqli_query($conn,"INSERT INTO booking VALUES ('','$customerid','$detectorid','$bsd','$btrd')");
+    mysqli_query($conn,"INSERT INTO booking VALUES ('','$customerid','$detectorid','$bsd','$btrd','$cusname','$cusadd','$pm')");
 }
 else{
     echo " <script>
@@ -64,15 +67,27 @@ else{
             <input type="text" name="customer_id" class="form-control" id="customer_id" aria-describedby="emailHelp">
 
             <!--Q3-->
+            <label for="customer_name" class="form-label">Customer Name</label>
+            <input type="text" name="customer_name" class="form-control" id="customer_name" aria-describedby="emailHelp">
+
+            <!--Q4-->
             <label for="detector_id" class="form-label">Select Kit Detector ID</label>
             <input type="text" name="detector_id" class="form-control" id="detector_id" aria-describedby="emailHelp">
 
-            <!--Q4-->
+            <!--Q5-->
+            <label for="customer_address" class="form-label">Customer Address</label>
+            <input type="text" name="customer_address" class="form-control" id="customer_address" aria-describedby="emailHelp">
+
+            <!--Q6-->
+            <label for="paymant_method" class="form-label">Payment Method</label>
+            <input type="text" name="payment_method" class="form-control" id="payment_method" aria-describedby="emailHelp">
+
+            <!--Q7-->
             <label for="book_start_date" class="form-label">Start Date</label>
             <input type="date" name="book_start_date" class="form-control" id="book_start_date" aria-describedby="emailHelp">
             <br>
 
-            <!--Q5-->
+            <!--Q8-->
             <label for="book_tr_date" class="form-label">Today's Date</label>
             <input type="date" name="book_tr_date"  class="form-control" id="book_tr_date" aria-describedby="emailHelp">
              
